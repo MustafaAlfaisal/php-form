@@ -29,7 +29,7 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = md5($password_1);//encrypt with md5 function the password before saving in the database
+			$password = crypt($password_1);//encrypt with md5 function the password before saving in the database
 			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
 			mysqli_query($db, $query);
